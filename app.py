@@ -1,5 +1,5 @@
 import sys
-import travel_the_trail
+from travel_the_trail import game
 
 def game_menu(name):
     print("")
@@ -15,17 +15,18 @@ def game_menu(name):
 print("*** THE COLORADO TRAIL GAME ***")
 print("Created with Python by n1ftyn0m4d © 2022\n")
 
-name = input("What is your name? ")
+player_name = input("What is your name? ")
 
-game_menu(name)
+game_menu(player_name)
 
 game_menu_input = input("What is your choice? ")
 
 if game_menu_input == "1":
-    print(f"\nOk {name}, let's hit it!")
+    print(f"\nOk {player_name}, let's hit it!")
     for num in range(3, 0, -1):
         print(num)
     print("And we're off...")    
+    game()
 elif game_menu_input == "2":
     print("\nThe Colorado Trail is a long distance trail The Colorado Trail is a long-distance trail running for 486 miles from the mouth of Waterton Canyon southwest of Denver to Durango in Colorado, USA.")
     print("Its highest point is 13,271 feet above sea level, and most of the trail is above 10,000 feet.")
@@ -39,11 +40,12 @@ elif game_menu_input == "2":
     print("------------------------------------------")
     game_menu_input = input("What would you like to do next? ")
     if game_menu_input == "1":
-        print(f"\nOk {name}, let's hit it!")
+        print(f"\nOk {player_name}, let's hit it!")
         for num in range(3, 0, -1):
             print(num)
         print("And we're off...")
+        game()
     else:
-        sys.exit(f"\nGoodbye {name}!\nCatch you next time.\n")
+        sys.exit(f"\nGoodbye {player_name}!\nCatch you next time.\n")
 else:
-    sys.exit(f"\nGoodbye {name}!\nCatch you next time.\n")
+    sys.exit(f"\nGoodbye {player_name}!\nCatch you next time.\n")
